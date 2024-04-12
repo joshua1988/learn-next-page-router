@@ -1,7 +1,8 @@
 module.exports = {
 	extends: ['next/core-web-vitals', 'plugin:prettier/recommended'],
-	plugins: ['prettier'],
+	plugins: ['prettier', 'unused-imports'],
 	rules: {
+		'unused-imports/no-unused-imports': 'error',
 		'prettier/prettier': [
 			'error',
 			// 아래 규칙들은 개인 선호에 따라 prettier 문법 적용

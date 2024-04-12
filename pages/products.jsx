@@ -1,6 +1,5 @@
 import { fetchProducts } from '@/api';
 import BasicLayout from '@/layouts/BasicLayout';
-import axios from 'axios';
 import { useEffect, useState } from 'react';
 
 function ProductPage() {
