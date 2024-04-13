@@ -7,3 +7,6 @@
   width: 200px;
   padding-left: 10px;
 }
+.description>p {
+  padding-bottom: 10px;
+}

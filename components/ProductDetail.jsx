@@ -12,6 +12,7 @@ function ProductDetail({ product: { imageUrl, price, name } }) {
 				<div className={styles.description}>
 					<p>{name}</p>
 					<p>{price}</p>
+					<button>장바구니에 담기</button>
 				</div>
 			</div>
 		</div>
