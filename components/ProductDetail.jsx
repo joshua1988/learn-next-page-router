@@ -2,10 +2,11 @@ import React from 'react';
 import styles from './ProductDetail.module.css';
 import { createCartItem } from '@/api';
 
-function ProductDetail({ product: { imageUrl, price, name, id } }) {
+function ProductDetail({ product }) {
+	const { imageUrl, price, name, id } = product;
 	const addCart = async () => {
 		try {
-			const { data } = await createCartItem({ id, name });
+			const { data } = await createCartItem(product);
 			alert(`${data.name}가 장바구니에 담겼습니다`);
 		} catch (error) {
 			console.log(error);

@@ -1,6 +1,7 @@
 ul, li, p {
   margin: 0;
   padding: 0;
+  display: block;
 }
 a {
   text-decoration: none;

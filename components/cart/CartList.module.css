@@ -1,0 +1,27 @@
+.container {
+  padding: 20px 32px;
+  width: 320px;
+}
+
+.item {
+  display: flex;
+}
+
+.description {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-left: 10px;
+}
+
+.total {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  padding-top: 10px;
+}
+
+.amount, .price {  
+  display: inline-block;
+  width: 120px;
+}
