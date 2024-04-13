@@ -5,8 +5,7 @@ function BasicLayout({ children }) {
 	return (
 		<main>
 			<nav>
-				<Link href="/">Home</Link>
-				<Link href="/products">Products</Link>
+				<Link href="/">Product</Link> | <Link href="/cart">Cart</Link>
 			</nav>
 			<div>{children}</div>
 		</main>
