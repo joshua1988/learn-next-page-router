@@ -2,6 +2,7 @@ import { fetchProducts } from '@/api';
 import React, { useEffect, useState } from 'react';
 import styles from './ProductList.module.css';
 import Image from 'next/image';
+import Link from 'next/link';
 
 function ProductList() {
 	const [products, setProducts] = useState([]);
@@ -16,21 +17,15 @@ function ProductList() {
 		<div>
 			<ul className={styles.container}>
 				{products &&
-					products.map(({ imageUrl, name, price }, index) => {
+					products.map(({ imageUrl, name, id }, index) => {
 						return (
 							<li className={styles.item} key={index}>
-								<div>
-									<Image
-										src={`${imageUrl}?random=${Math.random()}`}
-										width={300}
-										height={300}
-										alt={name}
-									/>
-								</div>
-								<div>
+								<Link href={`/products/${id}`}>
+									<div>
+										<Image src={imageUrl} width={300} height={300} alt={name} />
+									</div>
 									<div>{name}</div>
-									<div>{price}</div>
-								</div>
+								</Link>
 							</li>
 						);
 					})}

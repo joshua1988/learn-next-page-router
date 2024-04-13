@@ -1,0 +1,9 @@
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.description {
+  width: 200px;
+  padding-left: 10px;
+}

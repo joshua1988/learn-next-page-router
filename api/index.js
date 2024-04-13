@@ -8,4 +8,12 @@ function fetchProducts() {
 	return instance.get(`/products`);
 }
 
-export { fetchProducts };
+function fetchProductById(id) {
+	return instance.get('/products', {
+		params: {
+			id,
+		},
+	});
+}
+
+export { fetchProducts, fetchProductById };
