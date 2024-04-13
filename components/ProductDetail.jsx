@@ -1,7 +1,17 @@
 import React from 'react';
 import styles from './ProductDetail.module.css';
+import { createCartItem } from '@/api';
 
-function ProductDetail({ product: { imageUrl, price, name } }) {
+function ProductDetail({ product: { imageUrl, price, name, id } }) {
+	const addCart = async () => {
+		try {
+			const { data } = await createCartItem({ id, name });
+			alert(`${data.name}가 장바구니에 담겼습니다`);
+		} catch (error) {
+			console.log(error);
+		}
+	};
+
 	return (
 		<div>
 			<h1>상품 상세 페이지</h1>
@@ -12,7 +22,7 @@ function ProductDetail({ product: { imageUrl, price, name } }) {
 				<div className={styles.description}>
 					<p>{name}</p>
 					<p>{price}</p>
-					<button>장바구니에 담기</button>
+					<button onClick={addCart}>장바구니에 담기</button>
 				</div>
 			</div>
 		</div>

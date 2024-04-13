@@ -193,6 +193,18 @@
       "name": "Awesome Concrete Shirt",
       "price": "165.00",
       "imageUrl": "http://placeimg.com/640/480/fashion"
+    },
+    {
+      "id": 0,
+      "name": "Refined Fresh Chicken"
+    },
+    {
+      "id": 0,
+      "name": "Refined Fresh Chicken"
+    },
+    {
+      "id": 0,
+      "name": "Refined Fresh Chicken"
     }
   ]
 }

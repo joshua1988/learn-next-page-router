@@ -1,10 +1,16 @@
 import { fetchProductById } from '@/api';
 import ProductDetail from '@/components/ProductDetail';
+import BasicLayout from '@/layouts/BasicLayout';
 import React from 'react';
 
 function ProductDetailPage({ product }) {
 	const detail = product[0];
-	return <ProductDetail product={detail}></ProductDetail>;
+
+	return (
+		<BasicLayout>
+			<ProductDetail product={detail}></ProductDetail>
+		</BasicLayout>
+	);
 }
 
 export async function getServerSideProps(context) {

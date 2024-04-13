@@ -16,4 +16,11 @@ function fetchProductById(id) {
 	});
 }
 
-export { fetchProducts, fetchProductById };
+function createCartItem({ id, name }) {
+	return instance.post('/carts', {
+		id,
+		name,
+	});
+}
+
+export { fetchProducts, fetchProductById, createCartItem };
