@@ -2,10 +2,20 @@ import Image from 'next/image';
 import React from 'react';
 import styles from './CartList.module.css';
 import { formatNumberWithDecimalPoint } from '@/utils/format';
+import axios from 'axios';
 
 function CartList({ carts }) {
 	const totalAmount = carts.length;
 	const totalPrice = carts.reduce((acc, cur) => acc + Number(cur.price), 0);
+
+	const removeCart = async id => {
+		const { data } = await axios.post('http://localhost:3000/api/cart', {
+			data: {
+				id,
+			},
+		});
+		alert(`${data.name}이 삭제 되었습니다`);
+	};
 
 	return (
 		<div className={styles.container}>
@@ -18,7 +28,7 @@ function CartList({ carts }) {
 						<div className={styles.description}>
 							<p>{name}</p>
 							<p>{price}</p>
-							<button>삭제하기</button>
+							<button onClick={() => removeCart(id)}>삭제하기</button>
 						</div>
 					</li>
 				))}

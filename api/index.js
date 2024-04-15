@@ -29,4 +29,14 @@ function createCartItem({ id, name, price, imageUrl }) {
 	});
 }
 
-export { fetchProducts, fetchProductById, fetchCartItems, createCartItem };
+function removeCartItem(id) {
+	return instance.delete(`/carts/${id}`);
+}
+
+export {
+	fetchProducts,
+	fetchProductById,
+	fetchCartItems,
+	createCartItem,
+	removeCartItem,
+};
