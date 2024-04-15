@@ -5,6 +5,9 @@
 }
 .description {
   width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding-left: 10px;
 }
 .description>p {
