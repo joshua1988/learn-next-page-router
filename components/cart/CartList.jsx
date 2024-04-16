@@ -3,8 +3,10 @@ import React from 'react';
 import styles from './CartList.module.css';
 import { formatNumberWithDecimalPoint } from '@/utils/format';
 import axios from 'axios';
+import { useRouter } from 'next/router';
 
 function CartList({ carts }) {
+	const router = useRouter();
 	const totalAmount = carts.length;
 	const totalPrice = carts.reduce((acc, cur) => acc + Number(cur.price), 0);
 
@@ -15,6 +17,7 @@ function CartList({ carts }) {
 			},
 		});
 		alert(`${data.name}이 삭제 되었습니다`);
+		router.replace(router.asPath);
 	};
 
 	return (
