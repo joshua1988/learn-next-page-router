@@ -8,7 +8,7 @@ function Counter() {
 
 	return (
 		<div>
-			<p>{counter}</p>
+			<p data-cy="count">{counter}</p>
 			<button onClick={addCounter}>+</button>
 			<button onClick={substractCounter}>-</button>
 		</div>
