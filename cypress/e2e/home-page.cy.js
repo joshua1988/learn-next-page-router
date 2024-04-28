@@ -11,4 +11,6 @@ describe('카운터 앱', () => {
 		cy.get('#plus-button').click();
 		cy.get('[data-cy=count]').contains(1);
 	});
+
+	// TODO: 마이너스 버튼 눌렀을 떄 카운트가 1이 감소되는 시나리오를 작성해 보세요.
 });
