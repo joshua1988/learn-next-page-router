@@ -9,7 +9,9 @@ function Counter() {
 	return (
 		<div>
 			<p data-cy="count">{counter}</p>
-			<button onClick={addCounter}>+</button>
+			<button id="plus-button" onClick={addCounter}>
+				+
+			</button>
 			<button onClick={substractCounter}>-</button>
 		</div>
 	);
