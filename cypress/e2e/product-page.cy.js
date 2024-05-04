@@ -10,4 +10,10 @@ describe('상품 목록 페이지', () => {
 		cy.getByCy('cart-menu').click('');
 		cy.getByCy('cart-header').should('be.visible');
 	});
+
+	it('상품을 클릭하면 상품 상세 페이지로 이동한다.', () => {
+		cy.visit('/');
+		cy.getByCy('product').first().click();
+		cy.url().should('include', '/products/');
+	});
 });
