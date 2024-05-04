@@ -19,7 +19,7 @@ function ProductList() {
 				{products &&
 					products.map(({ imageUrl, name, id }, index) => {
 						return (
-							<li className={styles.item} key={index}>
+							<li className={styles.item} key={index} data-cy="product">
 								<Link href={`/products/${id}`}>
 									<div>
 										<Image src={imageUrl} width={300} height={300} alt={name} />
