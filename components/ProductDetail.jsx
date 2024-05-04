@@ -23,11 +23,17 @@ function ProductDetail({ product }) {
 			<h1>상품 상세 페이지</h1>
 			<div className={styles.container}>
 				<div>
-					<Image src={imageUrl} width={250} height={250} alt={name} />
+					<Image
+						data-cy="product-image"
+						src={imageUrl}
+						width={250}
+						height={250}
+						alt={name}
+					/>
 				</div>
 				<div className={styles.description}>
-					<p>{name}</p>
-					<p>{price}</p>
+					<p data-cy="product-name">{name}</p>
+					<p data-cy="product-price">{price}</p>
 					<button onClick={addCart}>장바구니에 담기</button>
 				</div>
 			</div>
