@@ -20,7 +20,7 @@ describe('상품 목록 페이지', () => {
 		cy.url().should('include', '/products/');
 	});
 
-	it.only('상품의 개수가 3개면 목록에 3개가 노출되어야 한다.', () => {
+	it('상품의 개수가 3개면 목록에 3개가 노출되어야 한다.', () => {
 		cy.intercept('/products', PRODUCTS_3개).as('getProducts');
 		cy.visit('/');
 		cy.wait('@getProducts');

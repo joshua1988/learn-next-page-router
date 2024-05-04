@@ -9,7 +9,7 @@ describe('상품 상세 페이지', () => {
 		cy.getByCy('product-price').should('be.visible');
 	});
 
-	it.only('[장바구니에 담기] 버튼을 누르면 선택한 상품이 담겨졌다는 시스템 얼럿 창이 뜬다.', () => {
+	it('[장바구니에 담기] 버튼을 누르면 선택한 상품이 담겨졌다는 시스템 얼럿 창이 뜬다.', () => {
 		// prepare
 		const stub = cy.stub();
 		cy.on('window:alert', stub);
