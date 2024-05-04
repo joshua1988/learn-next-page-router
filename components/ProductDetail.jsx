@@ -34,7 +34,9 @@ function ProductDetail({ product }) {
 				<div className={styles.description}>
 					<p data-cy="product-name">{name}</p>
 					<p data-cy="product-price">{price}</p>
-					<button onClick={addCart}>장바구니에 담기</button>
+					<button data-cy="add-to-cart" onClick={addCart}>
+						장바구니에 담기
+					</button>
 				</div>
 			</div>
 		</div>
