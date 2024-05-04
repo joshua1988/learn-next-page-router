@@ -5,7 +5,13 @@ function BasicLayout({ children }) {
 	return (
 		<main>
 			<nav>
-				<Link href="/">Product</Link> | <Link href="/cart">Cart</Link>
+				<Link data-cy="product-menu" href="/">
+					Product
+				</Link>{' '}
+				|{' '}
+				<Link data-cy="cart-menu" href="/cart">
+					Cart
+				</Link>
 			</nav>
 			<div>{children}</div>
 		</main>
