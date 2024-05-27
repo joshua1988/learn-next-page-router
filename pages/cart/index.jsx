@@ -1,30 +1,25 @@
-import { fetchCartItems } from '@/api';
+import { fetchCarts } from '@/api';
 import CartHeader from '@/components/cart/CartHeader';
 import CartList from '@/components/cart/CartList';
-import BasicLayout from '@/layouts/BasicLayout';
 
-export default function CartPage({ carts }) {
-	return (
-		<BasicLayout>
-			<CartHeader></CartHeader>
-			<CartList carts={carts}></CartList>
-		</BasicLayout>
-	);
+// '/cart'에 해당하는 장바구니 페이지 컴포넌트
+function CartPage({ carts }) {
+  return (
+    <div>
+      <CartHeader></CartHeader>
+      <CartList carts={carts}></CartList>
+    </div>
+  );
 }
 
 export async function getServerSideProps() {
-	try {
-		const { data } = await fetchCartItems();
-		return {
-			props: {
-				carts: data,
-			},
-		};
-	} catch (error) {
-		return {
-			props: {
-				carts: [],
-			},
-		};
-	}
+  const { data } = await fetchCarts();
+
+  return {
+    props: {
+      carts: data,
+    },
+  };
 }
+
+export default CartPage;

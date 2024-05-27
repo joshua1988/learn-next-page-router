@@ -1,53 +1,63 @@
 import Image from 'next/image';
 import React from 'react';
 import styles from './CartList.module.css';
-import { formatNumberWithDecimalPoint } from '@/utils/format';
-import axios from 'axios';
+import { removeCartItem } from '@/api';
 import { useRouter } from 'next/router';
+import axios from 'axios';
 
-function CartList({ carts }) {
-	const router = useRouter();
-	const totalAmount = carts.length;
-	const totalPrice = carts.reduce((acc, cur) => acc + Number(cur.price), 0);
+// // map()
+// [1, 2, 3][(10, 20, 30)];
 
-	const removeCart = async id => {
-		const { data } = await axios.post('http://localhost:3000/api/cart', {
-			data: {
-				id,
-			},
-		});
-		alert(`${data.name}이 삭제 되었습니다`);
-		router.replace(router.asPath);
-	};
+// // reduce()
+// [1, 2, 3];
+// 6;
 
-	return (
-		<div className={styles.container}>
-			<ul>
-				{carts.map(({ id, name, price, imageUrl }) => (
-					<li key={id} className={styles.item}>
-						<div>
-							<Image width={100} height={100} src={imageUrl} alt={name}></Image>
-						</div>
-						<div className={styles.description}>
-							<p>{name}</p>
-							<p>{price}</p>
-							<button onClick={() => removeCart(id)}>삭제하기</button>
-						</div>
-					</li>
-				))}
-			</ul>
-			<div className={styles.total}>
-				<p>
-					<span className={styles.price}>총 수량 : {totalAmount}</span>
-				</p>
-				<p>
-					<span className={styles.amount}>
-						총 가격 : {formatNumberWithDecimalPoint(totalPrice)}
-					</span>
-				</p>
-			</div>
-		</div>
-	);
+export default function CartList({ carts }) {
+  const router = useRouter();
+
+  const totalPrice = carts.reduce((acc, cur) => {
+    return acc + parseFloat(cur.price);
+  }, 0);
+
+  const removeCart = async id => {
+    // 1. 삭제 API 호출
+    const { data } = await axios.post('http://localhost:3000/api/carts', {
+      id: id,
+    });
+    alert(data);
+    // // 2. 상품 목록 갱신
+    router.replace(router.asPath);
+  };
+
+  return (
+    <div>
+      <div>
+        <ul>
+          {carts.map(cart => {
+            return (
+              <li key={cart.id} className={styles.item}>
+                <div>
+                  <Image
+                    src={cart.imageUrl}
+                    alt={cart.name}
+                    width={75}
+                    height={75}
+                  />
+                </div>
+                <div className={styles.description}>
+                  <div>{cart.name}</div>
+                  <div>{cart.price}</div>
+                  <button onClick={() => removeCart(cart.id)}>삭제하기</button>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+      <div>
+        <p>총 가격 : {totalPrice}</p>
+        <p>총 수량 : {carts.length}</p>
+      </div>
+    </div>
+  );
 }
-
-export default CartList;
