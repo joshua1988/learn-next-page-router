@@ -1,6 +1,8 @@
 # Next.js 시작하기 강의
 
-[인프런 Next.js 시작하기]() 강의 소스코드 리포지토리입니다.
+[인프런 Next.js 시작하기](https://inf.run/Mpnyu) 강의 소스코드 리포지토리입니다.
+
+![인프런 Next.js 시작하기 강의](https://cdn.inflearn.com/public/courses/333958/cover/6201a945-c49f-4b1a-8a50-1fcd0832072e/333958.png)
 
 ## 개발 환경 구성
 
