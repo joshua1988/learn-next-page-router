@@ -2,7 +2,9 @@
 
 [인프런 Next.js 시작하기](https://inf.run/Mpnyu) 강의 소스코드 리포지토리입니다.
 
-![인프런 Next.js 시작하기 강의](https://cdn.inflearn.com/public/courses/333958/cover/6201a945-c49f-4b1a-8a50-1fcd0832072e/333958.png)
+<a href="https://inf.run/Mpnyu" target="_blank">
+  <img src="https://cdn.inflearn.com/public/courses/333958/cover/6201a945-c49f-4b1a-8a50-1fcd0832072e/333958.png" alt="인프런 Next.js 시작하기 강의"/>
+</a>
 
 ## 개발 환경 구성
 
